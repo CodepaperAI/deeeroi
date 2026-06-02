@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { PORTFOLIO_PROJECTS } from '@/lib/constants';
 
 const BASE_URL = 'https://www.deeroiconstructions.com';
 
@@ -14,13 +15,6 @@ const staticPages = [
   { path: '/quote', priority: 0.8 },
 ];
 
-const portfolioSlugs = [
-  'the-echo-project',
-  'the-brightline-project',
-  'the-atlas-project',
-  'washroom-upgrade',
-];
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
     url: `${BASE_URL}${page.path}`,
@@ -29,8 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  const portfolioEntries: MetadataRoute.Sitemap = portfolioSlugs.map((slug) => ({
-    url: `${BASE_URL}/portfolio/${slug}`,
+  const portfolioEntries: MetadataRoute.Sitemap = PORTFOLIO_PROJECTS.map((project) => ({
+    url: `${BASE_URL}/portfolio/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.6,

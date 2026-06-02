@@ -46,11 +46,12 @@ export default function QuotePage() {
       {/* ── Hero ── */}
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=85"
-          alt="Architectural building rising into the sky"
+          src="/images/projects/bombay-club-oakville-1.jpg"
+          alt="Completed restaurant bar renovation by Deeroi Constructions"
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: 'center 52%' }}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />

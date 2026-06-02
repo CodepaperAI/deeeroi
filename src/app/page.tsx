@@ -1,88 +1,180 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, ChevronDown, Phone } from 'lucide-react';
+import HeroPhotoCarousel from '@/components/animations/HeroPhotoCarousel';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import TextReveal from '@/components/animations/TextReveal';
 import CountUp from '@/components/animations/CountUp';
 import { SITE, SERVICES, PORTFOLIO_PROJECTS, BRAND_LOGOS } from '@/lib/constants';
 
-/* ------------------------------------------------------------------ */
-/*  1. Hero Section                                                    */
-/* ------------------------------------------------------------------ */
+const photoCount = PORTFOLIO_PROJECTS.reduce(
+  (total, project) => total + project.images.length,
+  0,
+);
+
+export const metadata: Metadata = {
+  title: 'Construction Company in Brampton and Ontario',
+  description:
+    'Deeroi Constructions provides commercial build-outs, restaurant renovations, custom homes, kitchen renovations, and bathroom renovations in Brampton, the GTA, and Ontario.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Construction Company in Brampton and Ontario | Deeroi Constructions',
+    description:
+      'Commercial and residential construction across Brampton, the GTA, and Ontario with real project photos from restaurants, banks, retail spaces, kitchens, and bathrooms.',
+    url: '/',
+    images: [
+      {
+        url: '/images/projects/7-spice-brampton-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Restaurant build-out by Deeroi Constructions',
+      },
+    ],
+  },
+};
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  name: SITE.name,
+  url: SITE.url,
+  image: `${SITE.url}/images/projects/7-spice-brampton-1.jpg`,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '16 Regan Road',
+    addressLocality: 'Brampton',
+    addressRegion: 'ON',
+    postalCode: 'L7A 1C1',
+    addressCountry: 'CA',
+  },
+  areaServed: ['Brampton', 'Greater Toronto Area', 'Ontario'],
+  foundingDate: SITE.since.toString(),
+  sameAs: [SITE.social.instagram, SITE.social.facebook],
+  knowsAbout: [
+    'Commercial construction',
+    'Restaurant build-outs',
+    'Residential construction',
+    'Kitchen renovations',
+    'Bathroom renovations',
+    'Retail renovations',
+  ],
+};
+
+const HERO_PHOTOS = [
+  {
+    src: '/images/projects/7-spice-brampton-1.jpg',
+    alt: 'Completed restaurant dining room with feature wall and lighting',
+    label: '7 Spice Brampton',
+    eyebrow: 'Restaurant Build-Out',
+    objectPosition: 'center 48%',
+  },
+  {
+    src: '/images/projects/mehfil-etobicoke-1.jpg',
+    alt: 'Finished restaurant bar build-out by Deeroi Constructions',
+    label: 'Mehfil Etobicoke',
+    eyebrow: 'Hospitality Interior',
+    objectPosition: 'center 58%',
+  },
+  {
+    src: '/images/projects/bombay-club-oakville-1.jpg',
+    alt: 'Premium restaurant bar counter with stone finish and back bar',
+    label: 'Bombay Club Oakville',
+    eyebrow: 'Bar Build-Out',
+    objectPosition: 'center 52%',
+  },
+  {
+    src: '/images/projects/barzilla-3.jpg',
+    alt: 'Luxury bar shelving and illuminated counter work',
+    label: 'Barzilla',
+    eyebrow: 'Lounge Finish Work',
+    objectPosition: 'center 50%',
+  },
+  {
+    src: '/images/projects/meridian-bank-port-elgin-1.jpg',
+    alt: 'Completed bank reception renovation by Deeroi Constructions',
+    label: 'Meridian Bank Port Elgin',
+    eyebrow: 'Commercial Renovation',
+    objectPosition: 'center 50%',
+  },
+  {
+    src: '/images/projects/18972-mississauga-rd-caledon-3.jpg',
+    alt: 'Completed residential exterior project by Deeroi Constructions',
+    label: 'Caledon Custom Residence',
+    eyebrow: 'Residential Project',
+    objectPosition: 'center 46%',
+  },
+] as const;
+
 function HeroSection() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85"
-        alt="Premium modern home exterior at twilight"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
+    <section className="relative min-h-[100svh] overflow-hidden bg-foreground text-white">
+      <HeroPhotoCarousel photos={HERO_PHOTOS} />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,8,0.9)_0%,rgba(8,8,8,0.66)_40%,rgba(8,8,8,0.22)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(200,150,78,0.18),transparent_34%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-foreground via-foreground/70 to-transparent" />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-
-      {/* Content */}
-      <div className="container-main relative z-10 flex flex-col items-start gap-6 max-w-3xl">
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          <TextReveal text="Building Your Dreams Into Reality" />
-        </h1>
-
-        <ScrollReveal delay={0.5} className="max-w-xl">
-          <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-            Full-service construction &amp; renovation — trusted by national
-            brands since {SITE.since}.
+      <div className="container-main relative z-10 flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-40">
+        <div className="max-w-4xl">
+          <p className="mb-5 inline-flex max-w-full items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/80 backdrop-blur-md">
+            Commercial and residential contractor
           </p>
-        </ScrollReveal>
 
-        <ScrollReveal delay={0.7} className="flex flex-col sm:flex-row gap-4 mt-2">
-          <Link
-            href="/quote"
-            className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-widest bg-accent text-white rounded hover:bg-accent-hover transition-colors"
+          <h1
+            className="max-w-4xl text-3xl font-bold leading-[1.04] text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            style={{ fontFamily: 'var(--font-display)' }}
           >
-            Get a Free Quote
-          </Link>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-widest border-2 border-white text-white rounded hover:bg-white hover:text-foreground transition-colors"
-          >
-            View Our Work
-          </Link>
-        </ScrollReveal>
+            Brampton Construction Company
+          </h1>
+
+          <p className="mt-6 max-w-[21rem] text-base leading-relaxed text-white/78 sm:max-w-2xl md:text-xl">
+            Commercial build-outs, restaurant renovations, custom homes,
+            kitchens, and bathrooms across Brampton, the GTA, and Ontario.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/quote"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-accent px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-hover"
+            >
+              Get Construction Quote
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/35 px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:border-white hover:bg-white hover:text-foreground"
+            >
+              View Project Photos
+            </Link>
+          </div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-xs uppercase tracking-widest text-white/50">Scroll</span>
-        <ChevronDown className="w-5 h-5 text-white/50 animate-bounce-subtle" />
+      <div className="absolute bottom-6 right-6 z-10 hidden items-center gap-2 text-xs uppercase tracking-[0.16em] text-white/50 md:flex">
+        Scroll
+        <ChevronDown className="h-4 w-4 animate-bounce-subtle" aria-hidden="true" />
       </div>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  2. Brand Logo Strip                                                */
-/* ------------------------------------------------------------------ */
 function BrandStrip() {
-  const brands = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];
+  const brands = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];
 
   return (
-    <section className="border-y border-border py-10 overflow-hidden bg-surface">
-      <p className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-8">
-        Trusted by Leading Brands
-      </p>
+    <section className="overflow-hidden border-y border-border bg-background py-8">
+      <div className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+        Built for recognizable commercial and residential spaces
+      </div>
       <div className="relative">
-        <div className="animate-marquee flex items-center gap-16 whitespace-nowrap w-max">
-          {brands.map((brand, i) => (
+        <div className="animate-marquee flex w-max items-center gap-12 whitespace-nowrap">
+          {brands.map((brand, index) => (
             <span
-              key={`${brand.name}-${i}`}
-              className="text-lg md:text-xl font-semibold uppercase tracking-[0.15em] text-muted/60 select-none"
+              key={`${brand.name}-${index}`}
+              className="text-lg font-bold uppercase tracking-[0.12em] text-foreground/42 md:text-xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {brand.name}
@@ -94,98 +186,156 @@ function BrandStrip() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  3. Services Overview                                               */
-/* ------------------------------------------------------------------ */
-function ServicesSection() {
-  const featured = [
-    SERVICES.commercial[0], // Restaurant Build-Outs
-    SERVICES.commercial[2], // Retail Stores
-    SERVICES.residential[0], // Custom Home Builds
-    SERVICES.residential[1], // Basement Construction
+function ProofSection() {
+  const proof = [
+    PORTFOLIO_PROJECTS[1],
+    PORTFOLIO_PROJECTS[2],
+    PORTFOLIO_PROJECTS[12],
   ];
 
   return (
-    <section className="py-24 md:py-32">
-      <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left — intro */}
-          <ScrollReveal direction="left">
-            <p className="text-xs uppercase tracking-[0.2em] text-accent mb-4 font-semibold">
-              Our Expertise
-            </p>
-            <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              What We Build
-            </h2>
-            <p className="text-muted leading-relaxed max-w-md text-lg">
-              From franchise restaurant build-outs for national brands to custom
-              dream homes across the GTA, Deeroi Constructions delivers
-              end-to-end general contracting with uncompromising quality and
-              transparent timelines.
-            </p>
-          </ScrollReveal>
+    <section className="bg-surface py-20 md:py-28">
+      <div className="container-main grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <ScrollReveal>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            Real work archive
+          </p>
+          <h2
+            className="max-w-xl text-3xl font-bold leading-tight md:text-5xl"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Finished client photos do the heavy lifting.
+          </h2>
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
+            The site now highlights completed Deeroi projects, from restaurant
+            interiors and bank renovations to custom residential upgrades. That
+            proof helps visitors trust the finish before they ever fill out a
+            form.
+          </p>
+        </ScrollReveal>
 
-          {/* Right — 2x2 grid of service cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {featured.map((service, i) => (
-              <ScrollReveal key={service.title} delay={0.1 * i}>
-                <div className="group relative aspect-[3/2] rounded-lg overflow-hidden cursor-pointer">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {proof.map((project, index) => (
+            <ScrollReveal key={project.slug} delay={index * 0.12}>
+              <Link
+                href={`/portfolio/${project.slug}`}
+                className="group block overflow-hidden rounded-lg bg-background shadow-[0_18px_50px_rgba(0,0,0,0.08)]"
+              >
+                <div className="relative aspect-[4/5]">
                   <Image
-                    src={service.image}
-                    alt={service.title}
+                    src={project.image}
+                    alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, 33vw"
                   />
-                  {/* Default overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent transition-opacity duration-300" />
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  {/* Title */}
-                  <span
-                    className="absolute bottom-4 left-4 right-4 text-sm md:text-base font-semibold text-white z-10"
+                </div>
+                <div className="p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+                    {project.location}
+                  </p>
+                  <h3
+                    className="mt-2 text-lg font-bold"
                     style={{ fontFamily: 'var(--font-display)' }}
                   >
-                    {service.title}
-                  </span>
+                    {project.title}
+                  </h3>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              </Link>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  4. Stats Strip                                                     */
-/* ------------------------------------------------------------------ */
+function ServicesSection() {
+  const featured = [
+    ...SERVICES.commercial.slice(0, 2),
+    ...SERVICES.residential.slice(2, 4),
+  ];
+
+  return (
+    <section className="bg-background py-20 md:py-28">
+      <div className="container-main">
+        <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <ScrollReveal>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              What we build
+            </p>
+            <h2
+              className="max-w-2xl text-3xl font-bold leading-tight md:text-5xl"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Spaces that need tight coordination and a clean finish.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <Link
+              href="/commercial"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] transition-colors hover:border-accent hover:text-accent"
+            >
+              Explore Services
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </ScrollReveal>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {featured.map((service, index) => (
+            <ScrollReveal key={service.title} delay={index * 0.1}>
+              <div className="group overflow-hidden rounded-lg border border-border bg-background">
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+                  <h3
+                    className="absolute bottom-5 left-5 right-5 text-xl font-bold leading-tight text-white"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="min-h-28 p-5 leading-relaxed text-muted">
+                  {service.description}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function StatsSection() {
   const stats = [
-    { end: 8, suffix: '+', label: 'Years in Business' },
-    { end: 200, suffix: '+', label: 'Projects Completed' },
-    { end: 50, suffix: '+', label: 'Commercial Builds' },
-    { end: 100, suffix: '%', label: 'Client Satisfaction' },
+    { end: 8, suffix: '+', label: 'Years in business' },
+    { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'commercial').length, suffix: '', label: 'Commercial case studies' },
+    { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'residential').length, suffix: '', label: 'Residential case studies' },
+    { end: photoCount, suffix: '', label: 'Real client photos' },
   ];
 
   return (
     <section className="section-dark py-20 md:py-24">
       <div className="container-main">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 text-center">
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-4">
           {stats.map((stat) => (
-            <ScrollReveal key={stat.label} direction="up">
-              <div className="flex flex-col items-center gap-2">
+            <ScrollReveal key={stat.label}>
+              <div className="bg-foreground p-6 text-center md:p-8">
                 <span
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent"
+                  className="text-4xl font-bold text-accent md:text-5xl"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  <CountUp end={stat.end} suffix={stat.suffix} duration={2.5} />
+                  <CountUp end={stat.end} suffix={stat.suffix} duration={2.3} />
                 </span>
-                <span className="text-sm uppercase tracking-widest text-white/60">
+                <span className="mt-3 block text-xs uppercase tracking-[0.14em] text-white/56">
                   {stat.label}
                 </span>
               </div>
@@ -197,156 +347,147 @@ function StatsSection() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  5. Featured Projects                                               */
-/* ------------------------------------------------------------------ */
 function FeaturedProjects() {
-  const projects = PORTFOLIO_PROJECTS.slice(0, 3);
+  const projects = PORTFOLIO_PROJECTS.slice(0, 6);
 
   return (
-    <section className="py-24 md:py-32 bg-surface">
+    <section className="bg-surface py-20 md:py-28">
       <div className="container-main">
-        <ScrollReveal>
-          <p className="text-xs uppercase tracking-[0.2em] text-accent mb-4 font-semibold">
-            Portfolio
-          </p>
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-12"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            Our Recent Work
-          </h2>
-        </ScrollReveal>
-
-        {/* Bento grid: first large, other two stacked */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Large project — spans 2 rows on md+ */}
-          <ScrollReveal className="md:row-span-2">
-            <Link
-              href={`/portfolio/${projects[0].slug}`}
-              className="group relative block h-full min-h-[320px] md:min-h-[520px] rounded-lg overflow-hidden"
+        <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <ScrollReveal>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              Featured work
+            </p>
+            <h2
+              className="max-w-2xl text-3xl font-bold leading-tight md:text-5xl"
+              style={{ fontFamily: 'var(--font-display)' }}
             >
-              <Image
-                src={projects[0].image}
-                alt={projects[0].title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-6 left-6 right-6 z-10">
-                <span className="text-xs uppercase tracking-widest text-accent mb-2 block">
-                  {projects[0].category}
-                </span>
-                <h3
-                  className="text-xl md:text-2xl font-bold text-white"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {projects[0].title}
-                </h3>
-              </div>
+              A portfolio with actual client spaces.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <Link
+              href="/portfolio"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-foreground px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent"
+            >
+              View All Projects
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </ScrollReveal>
+        </div>
 
-          {/* Two stacked projects */}
-          {projects.slice(1).map((project, i) => (
-            <ScrollReveal key={project.slug} delay={0.15 * (i + 1)}>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <ScrollReveal key={project.slug} delay={index * 0.08}>
               <Link
                 href={`/portfolio/${project.slug}`}
-                className="group relative block h-full min-h-[250px] rounded-lg overflow-hidden"
+                className="group block overflow-hidden rounded-lg bg-background"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-5 left-5 right-5 z-10">
-                  <span className="text-xs uppercase tracking-widest text-accent mb-1 block">
-                    {project.category}
-                  </span>
-                  <h3
-                    className="text-lg md:text-xl font-bold text-white"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    {project.title}
-                  </h3>
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+                      {project.category}
+                    </p>
+                    <h3
+                      className="mt-2 text-2xl font-bold text-white"
+                      style={{ fontFamily: 'var(--font-display)' }}
+                    >
+                      {project.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/68">{project.location}</p>
+                  </div>
                 </div>
               </Link>
             </ScrollReveal>
           ))}
         </div>
-
-        {/* View all link */}
-        <ScrollReveal delay={0.3} className="mt-10 text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent hover:text-accent-hover transition-colors"
-          >
-            View All Projects
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </ScrollReveal>
       </div>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  6. CTA Section                                                     */
-/* ------------------------------------------------------------------ */
 function CtaSection() {
   return (
-    <section className="relative py-32 md:py-40 overflow-hidden">
+    <section className="relative overflow-hidden py-24 text-white md:py-32">
       <Image
-        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=85"
-        alt="Construction site at golden hour with cranes"
+        src="/images/projects/18972-mississauga-rd-caledon-3.jpg"
+        alt="Residential project exterior completed by Deeroi Constructions"
         fill
         className="object-cover"
+        style={{ objectPosition: 'center 46%' }}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/68" />
 
-      <div className="container-main relative z-10 text-center flex flex-col items-center gap-6">
+      <div className="container-main relative z-10 grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
         <ScrollReveal>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            Start the walkthrough
+          </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-2xl mx-auto"
+            className="max-w-3xl text-3xl font-bold leading-tight md:text-6xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Ready to Start Your Project?
+            Bring us the address, the scope, and the deadline.
           </h2>
-        </ScrollReveal>
-        <ScrollReveal delay={0.15}>
-          <p className="text-lg md:text-xl text-white/70 max-w-lg mx-auto">
-            Get a free consultation and estimate. Let&apos;s build something
-            exceptional together.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/72">
+            We will help price the work, plan the trades, and move the project
+            from idea to finished space with a clear construction path.
           </p>
         </ScrollReveal>
-        <ScrollReveal delay={0.3}>
-          <Link
-            href="/quote"
-            className="inline-flex items-center justify-center px-10 py-4 mt-2 text-sm font-semibold uppercase tracking-widest bg-accent text-white rounded hover:bg-accent-hover transition-colors"
-          >
-            Request a Quote
-          </Link>
+
+        <ScrollReveal delay={0.15}>
+          <div className="rounded-lg border border-white/16 bg-white/10 p-6 backdrop-blur-md">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <p className="leading-relaxed text-white/78">
+                Share your location, project type, and timeline. Deeroi will
+                follow up with the next steps for a quote.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/quote"
+                className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent-hover"
+              >
+                Request a Quote
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <a
+                href={`tel:${SITE.phone}`}
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/25 px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-foreground"
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
+                Call
+              </a>
+            </div>
+          </div>
         </ScrollReveal>
       </div>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Page                                                               */
-/* ------------------------------------------------------------------ */
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
+      />
       <HeroSection />
       <BrandStrip />
+      <ProofSection />
       <ServicesSection />
       <StatsSection />
       <FeaturedProjects />

@@ -1,85 +1,109 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import TextReveal from '@/components/animations/TextReveal';
 import { PORTFOLIO_PROJECTS } from '@/lib/constants';
 import PortfolioGrid from './PortfolioGrid';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
   description:
-    'Browse our portfolio of commercial and residential construction projects across the Greater Toronto Area. Restaurant build-outs, office renovations, custom homes, and more.',
+    'Browse real Deeroi Constructions project photos from commercial restaurant build-outs, retail renovations, institutional work, banks, kitchens, bathrooms, and residential upgrades across Ontario.',
   openGraph: {
     title: 'Portfolio | Deeroi Constructions',
     description:
-      'Projects that speak for themselves. Commercial and residential construction across the GTA.',
+      'Real client photos from commercial and residential construction projects across Ontario.',
+    images: [{ url: '/images/projects/mehfil-etobicoke-1.jpg', width: 1200, height: 630 }],
   },
 };
 
 export default function PortfolioPage() {
+  const commercialCount = PORTFOLIO_PROJECTS.filter(
+    (project) => project.type === 'commercial',
+  ).length;
+  const residentialCount = PORTFOLIO_PROJECTS.filter(
+    (project) => project.type === 'residential',
+  ).length;
+
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative overflow-hidden bg-foreground pb-24 pt-40 text-white md:pb-32 md:pt-48">
         <Image
-          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=2400&q=85"
-          alt="Construction portfolio overview"
+          src="/images/projects/18972-mississauga-rd-caledon-3.jpg"
+          alt="Completed residential exterior by Deeroi Constructions"
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: 'center 46%' }}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.86)_0%,rgba(10,10,10,0.62)_46%,rgba(10,10,10,0.28)_100%)]" />
 
-        <div className="container-main relative z-10 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent mb-4 font-semibold">
-            Our Work
+        <div className="container-main relative z-10">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            Real project archive
           </p>
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6"
+            className="max-w-4xl text-4xl font-bold leading-[1.04] text-white sm:text-6xl md:text-7xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            <TextReveal text="Our Portfolio" />
+            Project Portfolio
           </h1>
-          <ScrollReveal delay={0.3}>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              Projects that speak for themselves — commercial build-outs,
-              residential renovations, and everything in between.
-            </p>
-          </ScrollReveal>
+          <p className="mt-6 max-w-[20rem] text-base leading-relaxed text-white/78 sm:max-w-2xl md:text-xl">
+            A stronger portfolio built from finished client spaces, including
+            restaurants, banks, retail spaces, institutional projects, kitchens,
+            bathrooms, and residential upgrades.
+          </p>
+
+          <div className="mt-10 grid max-w-3xl grid-cols-3 gap-px overflow-hidden rounded-lg border border-white/16 bg-white/12 backdrop-blur-md">
+            {[
+              { value: PORTFOLIO_PROJECTS.length, label: 'Projects' },
+              { value: commercialCount, label: 'Commercial' },
+              { value: residentialCount, label: 'Homes' },
+            ].map((item) => (
+              <div key={item.label} className="bg-black/28 p-4 md:p-5">
+                <p
+                  className="text-2xl font-bold md:text-3xl"
+                  style={{ fontFamily: 'var(--font-display)' }}
+                >
+                  {item.value}
+                </p>
+                <p className="mt-1 text-[0.65rem] uppercase tracking-[0.1em] text-white/58 md:text-xs md:tracking-[0.14em]">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Portfolio Grid ── */}
-      <section className="py-24 md:py-32 bg-surface">
+      <section className="bg-surface py-20 md:py-28">
         <div className="container-main">
-          <PortfolioGrid projects={PORTFOLIO_PROJECTS as unknown as Project[]} />
+          <PortfolioGrid projects={PORTFOLIO_PROJECTS} />
         </div>
       </section>
 
-      {/* ── CTA ── */}
       <section className="section-dark py-20 md:py-28">
-        <div className="container-main text-center flex flex-col items-center gap-6">
+        <div className="container-main grid gap-8 lg:grid-cols-[1fr_0.55fr] lg:items-center">
           <ScrollReveal>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              Ready to build
+            </p>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl"
+              className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-5xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Have a Project in Mind?
+              Let your project be the next finished space in the portfolio.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
-            <p className="text-lg text-white/60 max-w-md">
-              Let&apos;s discuss how we can bring your vision to life.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.25}>
             <Link
               href="/quote"
-              className="inline-flex items-center justify-center px-10 py-4 mt-2 text-sm font-semibold uppercase tracking-widest bg-accent text-white rounded hover:bg-accent-hover transition-colors"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-accent px-7 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent-hover"
             >
               Request a Quote
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </ScrollReveal>
         </div>
@@ -87,14 +111,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-
-/* Type re-export for the client component */
-export type Project = {
-  slug: string;
-  title: string;
-  type: 'commercial' | 'residential';
-  category: string;
-  description: string;
-  image: string;
-  images: readonly string[];
-};

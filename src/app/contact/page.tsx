@@ -50,11 +50,12 @@ export default function ContactPage() {
       {/* ── Hero ── */}
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85"
-          alt="Modern building exterior"
+          src="/images/projects/meridian-bank-port-elgin-1.jpg"
+          alt="Completed commercial reception renovation by Deeroi Constructions"
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: 'center 48%' }}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />

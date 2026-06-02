@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TextRevealProps {
   text: string;
@@ -16,18 +15,14 @@ export default function TextReveal({
   delay = 0,
   staggerDelay = 0.08,
 }: TextRevealProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
-
   const words = text.split(' ');
 
   return (
     <motion.span
-      ref={ref}
       className={className}
-      style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '0 0.3em' }}
+      style={{ display: 'inline' }}
       initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      animate="visible"
       variants={{
         hidden: {},
         visible: {
@@ -41,7 +36,11 @@ export default function TextReveal({
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
-          style={{ overflow: 'hidden', display: 'inline-block' }}
+          style={{
+            overflow: 'hidden',
+            display: 'inline-block',
+            marginRight: i === words.length - 1 ? 0 : '0.3em',
+          }}
         >
           <motion.span
             style={{ display: 'inline-block' }}

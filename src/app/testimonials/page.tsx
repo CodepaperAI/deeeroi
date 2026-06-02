@@ -23,11 +23,12 @@ export default function TestimonialsPage() {
       {/* ── Hero ── */}
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2400&q=85"
-          alt="Happy clients discussing a construction project"
+          src="/images/projects/7-spice-brampton-1.jpg"
+          alt="Finished restaurant interior by Deeroi Constructions"
           fill
           priority
           className="object-cover"
+          style={{ objectPosition: 'center 48%' }}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
@@ -116,8 +117,8 @@ export default function TestimonialsPage() {
       {/* ── CTA ── */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2400&q=85"
-          alt="Construction project"
+          src="/images/projects/mehfil-etobicoke-2.jpg"
+          alt="Finished hospitality bar project by Deeroi Constructions"
           fill
           className="object-cover"
           sizes="100vw"

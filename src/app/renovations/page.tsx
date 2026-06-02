@@ -60,8 +60,8 @@ function CommercialRenovations() {
           <ScrollReveal direction="left">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85"
-                alt="Commercial restaurant renovation interior"
+                src="/images/projects/mehfil-brampton-2.jpg"
+                alt="Commercial restaurant renovation completed by Deeroi Constructions"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -174,8 +174,8 @@ function ResidentialRenovations() {
           <ScrollReveal direction="right" className="lg:order-2">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=85"
-                alt="Modern bathroom renovation with premium finishes"
+                src="/images/projects/washroom-amrit-2.jpg"
+                alt="Residential bathroom renovation with premium finishes"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

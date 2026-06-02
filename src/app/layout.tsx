@@ -6,15 +6,24 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Deeroi Constructions — Commercial & Residential Construction',
+    default: 'Deeroi Constructions | Construction Company in Brampton, Ontario',
     template: '%s | Deeroi Constructions',
   },
-  description: 'Full-service construction and renovation company in Brampton, Ontario. Trusted by Walmart, Tim Hortons, Five Guys, and more. Commercial build-outs, residential renovations, custom homes.',
+  description:
+    'Deeroi Constructions is a Brampton construction company serving Ontario with commercial build-outs, restaurant renovations, custom homes, kitchens, and bathrooms.',
   metadataBase: new URL('https://www.deeroiconstructions.com'),
-  keywords: ['construction company Brampton', 'commercial renovation Ontario', 'residential construction GTA', 'restaurant build-out', 'office renovation'],
+  keywords: [
+    'construction company Brampton',
+    'commercial construction Ontario',
+    'restaurant build-outs GTA',
+    'residential construction Brampton',
+    'kitchen renovations Ontario',
+    'bathroom renovations GTA',
+  ],
   openGraph: {
-    title: 'Deeroi Constructions',
-    description: 'Building Your Dreams Into Reality. Trusted by national brands since 2018.',
+    title: 'Deeroi Constructions | Brampton Construction Company',
+    description:
+      'Commercial and residential construction across Brampton, the GTA, and Ontario.',
     url: 'https://www.deeroiconstructions.com',
     siteName: 'Deeroi Constructions',
     type: 'website',

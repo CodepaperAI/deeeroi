@@ -85,8 +85,8 @@ function StorySection() {
           <ScrollReveal direction="right" delay={0.15}>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85"
-                alt="Deeroi Constructions team on site"
+                src="/images/projects/cimt-scarborough-3.jpg"
+                alt="Completed institutional renovation by Deeroi Constructions"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
