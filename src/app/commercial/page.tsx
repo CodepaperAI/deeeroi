@@ -2,11 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import TextReveal from '@/components/animations/TextReveal';
-import { SITE, SERVICES } from '@/lib/constants';
+import { BRAND_LOGOS, SITE, SERVICES } from '@/lib/constants';
 
 export const metadata = {
-  title: `Commercial Construction | ${SITE.name}`,
-  description: 'Commercial construction services in Brampton and the GTA — restaurant build-outs, office renovations, retail stores, and institutional projects. Trusted by Walmart, Tim Hortons, Five Guys.',
+  title: 'Commercial Construction Contractor in Brampton & GTA',
+  description:
+    'Commercial construction contractor in Brampton and the GTA for restaurant build-outs, retail renovations, office renovations, institutional projects, bank interiors, and franchise spaces.',
+  openGraph: {
+    title: `Commercial Construction Contractor in Brampton & GTA | ${SITE.name}`,
+    description:
+      'Restaurant build-outs, retail renovations, office renovations, bank interiors, and institutional construction across Brampton and the GTA.',
+    images: [{ url: '/images/projects/mehfil-etobicoke-1.jpg', width: 1200, height: 630 }],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -26,12 +33,12 @@ function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight max-w-3xl"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          <TextReveal text="Commercial Construction" />
+          <TextReveal text="Commercial Construction in Brampton & GTA" />
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-            From empty shells to fully finished projects — built to brand
-            standards, delivered on schedule.
+            Restaurant build-outs, retail renovations, office renovations, bank
+            interiors, and institutional projects built with clean coordination.
           </p>
         </ScrollReveal>
       </div>
@@ -43,13 +50,13 @@ function HeroSection() {
 /*  Brand Trust Strip                                                  */
 /* ------------------------------------------------------------------ */
 function BrandTrustStrip() {
-  const brands = ['Walmart', 'Tim Hortons', 'Five Guys', 'Meridian Bank'];
+  const brands = BRAND_LOGOS.map((brand) => brand.name);
 
   return (
     <section className="border-y border-border py-10 bg-surface">
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
         <span className="text-xs uppercase tracking-[0.2em] text-muted font-semibold shrink-0">
-          Trusted by
+          Portfolio includes
         </span>
         <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
           {brands.map((brand) => (
@@ -208,7 +215,7 @@ function CtaSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Ready to Build Your Commercial Space?
+            Need a Commercial Construction Contractor in Brampton or the GTA?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>

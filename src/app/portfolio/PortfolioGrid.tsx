@@ -40,7 +40,7 @@ export default function PortfolioGrid({
             className="text-3xl font-bold leading-tight md:text-4xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Finished client spaces
+            Commercial and Residential Project Portfolio
           </h2>
         </div>
 

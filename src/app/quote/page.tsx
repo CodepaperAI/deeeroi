@@ -6,13 +6,13 @@ import TextReveal from '@/components/animations/TextReveal';
 import QuoteForm from './QuoteForm';
 
 export const metadata: Metadata = {
-  title: 'Request a Quote',
+  title: 'Construction Quote in Brampton',
   description:
-    'Request a free quote from Deeroi Constructions. Tell us about your commercial or residential project and get an estimate within 48 hours.',
+    'Request a construction quote from Deeroi Constructions in Brampton for commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom home projects.',
   openGraph: {
-    title: 'Request a Quote | Deeroi Constructions',
+    title: 'Construction Quote in Brampton | Deeroi Constructions',
     description:
-      'Tell us about your project. Free estimates for commercial and residential construction.',
+      'Tell us about your commercial or residential construction project and get clear next steps from Deeroi Constructions.',
   },
 };
 
@@ -29,9 +29,9 @@ const trustPoints = [
   },
   {
     icon: Award,
-    title: 'Trusted by National Brands',
+    title: 'Commercial Portfolio Experience',
     description:
-      'Walmart, Tim Hortons, Five Guys — we build to franchise-level standards.',
+      'Portfolio work includes retail, bank, restaurant, institutional, and residential projects across Ontario.',
   },
   {
     icon: Banknote,
@@ -68,8 +68,8 @@ export default function QuotePage() {
           </h1>
           <ScrollReveal delay={0.3}>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              Tell us about your project and we&apos;ll provide a detailed
-              estimate within 48 hours.
+              Tell us about your commercial or residential project and we&apos;ll
+              follow up with clear next steps.
             </p>
           </ScrollReveal>
         </div>
@@ -91,7 +91,7 @@ export default function QuotePage() {
                   </h2>
                   <p className="text-muted mb-10">
                     Fill out the form below and our team will review your
-                    project details.
+                    project details and follow up.
                   </p>
                   <QuoteForm />
                 </div>

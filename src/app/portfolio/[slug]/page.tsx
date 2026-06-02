@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: project.title,
-    description: project.description,
+    title: `${project.title} ${project.category} in ${project.location}`,
+    description: `${project.category} portfolio project in ${project.location}: ${project.description}`,
     openGraph: {
-      title: `${project.title} | Deeroi Constructions`,
-      description: project.description,
+      title: `${project.title} ${project.category} | Deeroi Constructions`,
+      description: `${project.category} portfolio project in ${project.location}: ${project.description}`,
       images: [{ url: project.image, width: 1200, height: 630 }],
     },
   };
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: Props) {
                   ['Category', project.category],
                   ['Location', project.location],
                   ['Type', project.type],
-                  ['Photos', `${project.images.length} real project photos`],
+                  ['Photos', `${project.images.length} project photos`],
                 ].map(([label, value]) => (
                   <div key={label}>
                     <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
@@ -192,7 +192,7 @@ export default async function ProjectPage({ params }: Props) {
               className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-5xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Want this level of finish on your site?
+              Want this level of finish on your project?
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>

@@ -7,13 +7,13 @@ import { PORTFOLIO_PROJECTS } from '@/lib/constants';
 import PortfolioGrid from './PortfolioGrid';
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: 'Construction Portfolio in Brampton & Ontario',
   description:
-    'Browse real Deeroi Constructions project photos from commercial restaurant build-outs, retail renovations, institutional work, banks, kitchens, bathrooms, and residential upgrades across Ontario.',
+    'Browse Deeroi Constructions portfolio photos from commercial restaurant build-outs, retail renovations, institutional work, banks, kitchens, bathrooms, and residential upgrades across Ontario.',
   openGraph: {
-    title: 'Portfolio | Deeroi Constructions',
+    title: 'Construction Portfolio | Deeroi Constructions',
     description:
-      'Real client photos from commercial and residential construction projects across Ontario.',
+      'Portfolio photos from commercial and residential construction projects across Ontario.',
     images: [{ url: '/images/projects/mehfil-etobicoke-1.jpg', width: 1200, height: 630 }],
   },
 };
@@ -42,16 +42,16 @@ export default function PortfolioPage() {
 
         <div className="container-main relative z-10">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            Real project archive
+            Project archive
           </p>
           <h1
             className="max-w-4xl text-4xl font-bold leading-[1.04] text-white sm:text-6xl md:text-7xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Project Portfolio
+            Construction Project Portfolio
           </h1>
           <p className="mt-6 max-w-[20rem] text-base leading-relaxed text-white/78 sm:max-w-2xl md:text-xl">
-            A stronger portfolio built from finished client spaces, including
+            A stronger portfolio built from completed spaces, including
             restaurants, banks, retail spaces, institutional projects, kitchens,
             bathrooms, and residential upgrades.
           </p>

@@ -3,11 +3,16 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import TextReveal from '@/components/animations/TextReveal';
 import CountUp from '@/components/animations/CountUp';
-import { SITE } from '@/lib/constants';
+import { SITE, PORTFOLIO_PROJECTS } from '@/lib/constants';
 
 export const metadata = {
-  title: `About | ${SITE.name}`,
-  description: `Learn about ${SITE.name} — a full-service construction company in Brampton, Ontario, building for national brands like Walmart, Tim Hortons, and Five Guys since ${SITE.since}.`,
+  title: 'About Our Brampton Construction Company',
+  description: `Learn about ${SITE.name}, a Brampton construction company serving the GTA and Ontario with commercial build-outs, restaurant renovations, residential construction, kitchens, and bathrooms since ${SITE.since}.`,
+  openGraph: {
+    title: `About Our Brampton Construction Company | ${SITE.name}`,
+    description: `Learn about ${SITE.name}, a Brampton construction company serving the GTA and Ontario with commercial and residential construction since ${SITE.since}.`,
+    images: [{ url: '/images/projects/cimt-scarborough-3.jpg', width: 1200, height: 630 }],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -31,7 +36,7 @@ function HeroSection() {
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-            Building trust, one project at a time — from Brampton to across the GTA.
+            Commercial and residential construction across Brampton, the GTA, and Ontario.
           </p>
         </ScrollReveal>
       </div>
@@ -56,7 +61,7 @@ function StorySection() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              From Brampton Roots to National Brands
+              Brampton Construction Experience Across Commercial and Residential Work
             </h2>
             <div className="space-y-4 text-muted leading-relaxed text-lg">
               <p>
@@ -66,17 +71,17 @@ function StorySection() {
                 into something bigger.
               </p>
               <p>
-                Through relentless attention to quality and a reputation for
-                delivering on time, we expanded into commercial construction —
-                taking on restaurant build-outs, retail stores, and
-                institutional projects across the Greater Toronto Area.
+                Through careful planning and a reputation for clean finish work,
+                we expanded into commercial construction, taking on restaurant
+                build-outs, retail renovations, bank interiors, and institutional
+                projects across the Greater Toronto Area.
               </p>
               <p>
-                Today, we&apos;re trusted by some of Canada&apos;s most
-                recognized brands, including Walmart, Tim Hortons, Five Guys,
-                and Meridian Bank. Every project we take on carries the same
-                commitment: build it right, finish it on time, and communicate
-                every step of the way.
+                Today, our portfolio includes commercial spaces for retail,
+                banking, education, and hospitality, along with custom homes,
+                kitchen renovations, bathroom renovations, and residential
+                upgrades. Every project carries the same commitment: build it
+                right, finish cleanly, and communicate every step of the way.
               </p>
             </div>
           </ScrollReveal>
@@ -181,11 +186,18 @@ function ValuesSection() {
 /*  Stats                                                              */
 /* ------------------------------------------------------------------ */
 function StatsSection() {
+  const commercialProjects = PORTFOLIO_PROJECTS.filter(
+    (project) => project.type === 'commercial',
+  ).length;
+  const residentialProjects = PORTFOLIO_PROJECTS.filter(
+    (project) => project.type === 'residential',
+  ).length;
+
   const stats = [
     { end: 8, suffix: '+', label: 'Years in Business' },
-    { end: 200, suffix: '+', label: 'Projects Completed' },
-    { end: 50, suffix: '+', label: 'Commercial Builds' },
-    { end: 100, suffix: '%', label: 'Client Satisfaction' },
+    { end: PORTFOLIO_PROJECTS.length, suffix: '', label: 'Portfolio Projects' },
+    { end: commercialProjects, suffix: '', label: 'Commercial Case Studies' },
+    { end: residentialProjects, suffix: '', label: 'Residential Case Studies' },
   ];
 
   return (
@@ -225,13 +237,14 @@ function CtaSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Let&apos;s Build Something Together
+            Start Your Brampton Construction Project
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
           <p className="text-lg md:text-xl text-muted max-w-lg mx-auto">
-            Whether it&apos;s a commercial build-out or a dream home, we&apos;re
-            ready to bring your vision to life.
+            Whether it&apos;s a commercial build-out, restaurant renovation,
+            kitchen renovation, bathroom renovation, or custom home project,
+            we&apos;re ready to bring your vision to life.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>

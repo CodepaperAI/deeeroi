@@ -85,8 +85,8 @@ export default function QuoteForm() {
           Quote Request Received!
         </h4>
         <p className="text-muted max-w-sm">
-          Thank you! Our team will review your project details and get back to
-          you within 48 hours with an estimate.
+          Thank you! Our team will review your project details and follow up
+          with the next steps.
         </p>
         <button
           onClick={() => setStatus('idle')}

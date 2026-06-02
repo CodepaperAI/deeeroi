@@ -5,8 +5,15 @@ import TextReveal from '@/components/animations/TextReveal';
 import { SITE, SERVICES } from '@/lib/constants';
 
 export const metadata = {
-  title: `Residential Construction | ${SITE.name}`,
-  description: 'Custom home builds, basement construction, garden suites, and kitchen & bath renovations in Brampton and the GTA. Quality craftsmanship from Deeroi Constructions.',
+  title: 'Residential Construction Contractor in Brampton & GTA',
+  description:
+    'Residential construction contractor in Brampton and the GTA for custom homes, basement finishing, garden suites, kitchen renovations, bathroom renovations, and home upgrades.',
+  openGraph: {
+    title: `Residential Construction Contractor in Brampton & GTA | ${SITE.name}`,
+    description:
+      'Custom homes, basement finishing, garden suites, kitchen renovations, and bathroom renovations across Brampton and the GTA.',
+    images: [{ url: '/images/projects/18972-mississauga-rd-caledon-3.jpg', width: 1200, height: 630 }],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -26,12 +33,12 @@ function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight max-w-3xl"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          <TextReveal text="Residential Construction" />
+          <TextReveal text="Residential Construction in Brampton & GTA" />
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-            Custom homes, basements, garden suites, and renovations — built with
-            care for the way you live.
+            Custom homes, basement finishing, garden suites, kitchen
+            renovations, and bathroom renovations built for the way you live.
           </p>
         </ScrollReveal>
       </div>
@@ -180,7 +187,7 @@ function CtaSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Ready to Build Your Dream Home?
+            Planning a Residential Renovation or Custom Home?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>

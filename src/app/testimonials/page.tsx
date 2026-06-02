@@ -7,13 +7,13 @@ import TextReveal from '@/components/animations/TextReveal';
 import { TESTIMONIALS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Testimonials',
+  title: 'Construction Reviews',
   description:
-    'Read what our clients say about working with Deeroi Constructions. 5-star reviews from commercial and residential project owners across the Greater Toronto Area.',
+    'Read project-owner feedback for Deeroi Constructions, a Brampton construction company serving commercial and residential projects across the Greater Toronto Area.',
   openGraph: {
-    title: 'Testimonials | Deeroi Constructions',
+    title: 'Construction Reviews | Deeroi Constructions',
     description:
-      'What our clients say — trusted by franchise owners, businesses, and homeowners across the GTA.',
+      'Feedback from commercial and residential project owners across Brampton and the GTA.',
   },
 };
 
@@ -131,13 +131,13 @@ export default function TestimonialsPage() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Ready to Join Our Happy Clients?
+              Ready to Start Your Project?
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <p className="text-lg text-white/70 max-w-md">
-              Get a free consultation and discover why our clients keep coming
-              back.
+              Request a project consultation for commercial construction,
+              residential renovations, kitchens, bathrooms, or custom homes.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.25}>

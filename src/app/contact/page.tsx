@@ -7,13 +7,13 @@ import { SITE } from '@/lib/constants';
 import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Brampton Construction Company',
   description:
-    'Get in touch with Deeroi Constructions. Call, email, or visit us in Brampton, Ontario. Free consultations for commercial and residential projects.',
+    'Contact Deeroi Constructions in Brampton for commercial construction, restaurant build-outs, residential renovations, kitchen renovations, bathroom renovations, and custom home projects.',
   openGraph: {
-    title: 'Contact Us | Deeroi Constructions',
+    title: 'Contact Brampton Construction Company | Deeroi Constructions',
     description:
-      'Let\u2019s discuss your next project. Reach out for a free consultation.',
+      'Reach out to discuss your next commercial or residential construction project in Brampton, the GTA, or Ontario.',
   },
 };
 
@@ -72,8 +72,8 @@ export default function ContactPage() {
           </h1>
           <ScrollReveal delay={0.3}>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              Let&apos;s discuss your next project. Reach out and we&apos;ll get
-              back to you within 24 hours.
+              Let&apos;s discuss your next construction or renovation project in
+              Brampton, the GTA, or Ontario.
             </p>
           </ScrollReveal>
         </div>
@@ -181,7 +181,7 @@ export default function ContactPage() {
             <div className="rounded-lg overflow-hidden border border-border aspect-[21/9]">
               <iframe
                 title="Deeroi Constructions Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92228.99648688647!2d-79.8087654!3d43.7315479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b15eaa5d14a09%3A0x7d34cb5e93fbb2e6!2sBrampton%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000"
+                src="https://www.google.com/maps?q=16%20Regan%20Road%2C%20Brampton%2C%20ON%2C%20L7A%201C1&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

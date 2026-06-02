@@ -2,7 +2,7 @@ export const SITE = {
   name: 'Deeroi Constructions',
   tagline: 'Building Your Dreams Into Reality',
   description:
-    'Full-service construction and renovation company specializing in commercial and residential projects across Ontario. Built on real client work for restaurants, retail, institutions, banks, and homes.',
+    'Full-service construction and renovation company specializing in commercial and residential projects across Ontario, including restaurants, retail, institutions, banks, and homes.',
   url: 'https://www.deeroiconstructions.com',
   email: 'deeroi.info@gmail.com',
   phone: '+1 (647) 824-0001',
@@ -51,13 +51,13 @@ export const SERVICES = {
       image: '/images/projects/cimt-scarborough-3.jpg',
     },
     {
-      title: 'Retail Stores',
+      title: 'Retail Store Renovations',
       description:
         'Retail environments built around customer flow, brand standards, durable finishes, and clean handover.',
       image: '/images/projects/walmart-nb-1.jpg',
     },
     {
-      title: 'Bank & Franchise Projects',
+      title: 'Bank & Franchise Interiors',
       description:
         'Commercial renovations with coordinated trades, tight timelines, and polished public-facing spaces.',
       image: '/images/projects/meridian-bank-port-elgin-1.jpg',
@@ -65,13 +65,13 @@ export const SERVICES = {
   ],
   residential: [
     {
-      title: 'Custom Home Builds',
+      title: 'Custom Home Construction',
       description:
         'Ground-up and major exterior work with premium residential detailing from first impression to final walkthrough.',
       image: '/images/projects/18972-mississauga-rd-caledon-3.jpg',
     },
     {
-      title: 'Home Upgrades',
+      title: 'Home Renovations',
       description:
         'Interior upgrades, feature walls, fireplaces, living spaces, dining rooms, and whole-home finish refreshes.',
       image: '/images/projects/house-ug-braidwood-3.jpg',
@@ -144,7 +144,7 @@ export const PORTFOLIO_PROJECTS = [
     category: 'Bank Renovation',
     location: 'Port Elgin, ON',
     description:
-      'A clean, client-facing financial branch renovation with reception finishes, lighting upgrades, and a professional interior handover.',
+      'A clean, customer-facing financial branch renovation with reception finishes, lighting upgrades, and a professional interior handover.',
     image: '/images/projects/meridian-bank-port-elgin-1.jpg',
     images: [
       '/images/projects/meridian-bank-port-elgin-1.jpg',

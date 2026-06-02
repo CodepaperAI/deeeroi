@@ -10,16 +10,8 @@ export const metadata: Metadata = {
     template: '%s | Deeroi Constructions',
   },
   description:
-    'Deeroi Constructions is a Brampton construction company serving Ontario with commercial build-outs, restaurant renovations, custom homes, kitchens, and bathrooms.',
+    'Deeroi Constructions is a Brampton construction company serving the GTA and Ontario with commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom homes.',
   metadataBase: new URL('https://www.deeroiconstructions.com'),
-  keywords: [
-    'construction company Brampton',
-    'commercial construction Ontario',
-    'restaurant build-outs GTA',
-    'residential construction Brampton',
-    'kitchen renovations Ontario',
-    'bathroom renovations GTA',
-  ],
   openGraph: {
     title: 'Deeroi Constructions | Brampton Construction Company',
     description:

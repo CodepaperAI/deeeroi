@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Construction Company in Brampton and Ontario | Deeroi Constructions',
     description:
-      'Commercial and residential construction across Brampton, the GTA, and Ontario with real project photos from restaurants, banks, retail spaces, kitchens, and bathrooms.',
+      'Commercial and residential construction across Brampton, the GTA, and Ontario with portfolio photography from restaurants, banks, retail spaces, kitchens, and bathrooms.',
     url: '/',
     images: [
       {
@@ -147,7 +147,7 @@ function HeroSection() {
               href="/portfolio"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/35 px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:border-white hover:bg-white hover:text-foreground"
             >
-              View Project Photos
+              View Portfolio
             </Link>
           </div>
         </div>
@@ -198,19 +198,18 @@ function ProofSection() {
       <div className="container-main grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <ScrollReveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            Real work archive
+            Project archive
           </p>
           <h2
             className="max-w-xl text-3xl font-bold leading-tight md:text-5xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Finished client photos do the heavy lifting.
+            Finished projects show the detail.
           </h2>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
-            The site now highlights completed Deeroi projects, from restaurant
-            interiors and bank renovations to custom residential upgrades. That
-            proof helps visitors trust the finish before they ever fill out a
-            form.
+            Explore completed Deeroi projects, from restaurant interiors and bank
+            renovations to custom residential upgrades. Clear portfolio proof
+            helps visitors trust the finish before they ever fill out a form.
           </p>
         </ScrollReveal>
 
@@ -319,7 +318,7 @@ function StatsSection() {
     { end: 8, suffix: '+', label: 'Years in business' },
     { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'commercial').length, suffix: '', label: 'Commercial case studies' },
     { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'residential').length, suffix: '', label: 'Residential case studies' },
-    { end: photoCount, suffix: '', label: 'Real client photos' },
+    { end: photoCount, suffix: '', label: 'Portfolio photos' },
   ];
 
   return (
@@ -362,7 +361,7 @@ function FeaturedProjects() {
               className="max-w-2xl text-3xl font-bold leading-tight md:text-5xl"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              A portfolio with actual client spaces.
+              A portfolio of completed spaces.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
