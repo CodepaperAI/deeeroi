@@ -9,11 +9,11 @@ import { TESTIMONIALS } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Construction Reviews',
   description:
-    'Read project-owner feedback for Deeroi Constructions, a Brampton construction company serving commercial and residential projects across the Greater Toronto Area.',
+    'Read project-owner feedback for Deeroi Constructions, a GTA construction company serving commercial and residential projects across the Greater Toronto Area.',
   openGraph: {
     title: 'Construction Reviews | Deeroi Constructions',
     description:
-      'Feedback from commercial and residential project owners across Brampton and the GTA.',
+      'Feedback from commercial and residential project owners across the GTA and Ontario.',
   },
 };
 

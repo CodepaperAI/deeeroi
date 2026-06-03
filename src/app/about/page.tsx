@@ -6,11 +6,11 @@ import CountUp from '@/components/animations/CountUp';
 import { SITE, PORTFOLIO_PROJECTS } from '@/lib/constants';
 
 export const metadata = {
-  title: 'About Our Brampton Construction Company',
-  description: `Learn about ${SITE.name}, a Brampton construction company serving the GTA and Ontario with commercial build-outs, restaurant renovations, residential construction, kitchens, and bathrooms since ${SITE.since}.`,
+  title: 'About Our GTA Construction Company',
+  description: `Learn about ${SITE.name}, a GTA construction company serving Ontario with commercial build-outs, restaurant renovations, residential construction, kitchens, and bathrooms since ${SITE.since}.`,
   openGraph: {
-    title: `About Our Brampton Construction Company | ${SITE.name}`,
-    description: `Learn about ${SITE.name}, a Brampton construction company serving the GTA and Ontario with commercial and residential construction since ${SITE.since}.`,
+    title: `About Our GTA Construction Company | ${SITE.name}`,
+    description: `Learn about ${SITE.name}, a GTA construction company serving Ontario with commercial and residential construction since ${SITE.since}.`,
     images: [{ url: '/images/projects/cimt-scarborough-3.jpg', width: 1200, height: 630 }],
   },
 };
@@ -36,7 +36,7 @@ function HeroSection() {
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-            Commercial and residential construction across Brampton, the GTA, and Ontario.
+            Commercial and residential construction across the GTA and Ontario.
           </p>
         </ScrollReveal>
       </div>
@@ -61,14 +61,14 @@ function StorySection() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Brampton Construction Experience Across Commercial and Residential Work
+              GTA Construction Experience Across Commercial and Residential Work
             </h2>
             <div className="space-y-4 text-muted leading-relaxed text-lg">
               <p>
                 Founded in {SITE.since} by {SITE.owner}, Deeroi Constructions
-                started as a residential contractor in Brampton, Ontario. What
-                began with kitchen renovations and basement builds quickly grew
-                into something bigger.
+                started with residential construction in the Greater Toronto
+                Area. What began with kitchen renovations and basement builds
+                quickly grew into something bigger.
               </p>
               <p>
                 Through careful planning and a reputation for clean finish work,
@@ -237,7 +237,7 @@ function CtaSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Start Your Brampton Construction Project
+            Start Your GTA Construction Project
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>

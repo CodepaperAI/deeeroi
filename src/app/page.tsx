@@ -13,16 +13,16 @@ const photoCount = PORTFOLIO_PROJECTS.reduce(
 );
 
 export const metadata: Metadata = {
-  title: 'Construction Company in Brampton and Ontario',
+  title: 'Construction Company in the GTA and Ontario',
   description:
-    'Deeroi Constructions provides commercial build-outs, restaurant renovations, custom homes, kitchen renovations, and bathroom renovations in Brampton, the GTA, and Ontario.',
+    'Deeroi Constructions provides commercial build-outs, restaurant renovations, custom homes, kitchen renovations, and bathroom renovations across the GTA and Ontario.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Construction Company in Brampton and Ontario | Deeroi Constructions',
+    title: 'Construction Company in the GTA and Ontario | Deeroi Constructions',
     description:
-      'Commercial and residential construction across Brampton, the GTA, and Ontario with portfolio photography from restaurants, banks, retail spaces, kitchens, and bathrooms.',
+      'Commercial and residential construction across the GTA and Ontario with portfolio photography from restaurants, banks, retail spaces, kitchens, and bathrooms.',
     url: '/',
     images: [
       {
@@ -51,7 +51,7 @@ const localBusinessJsonLd = {
     postalCode: 'L7A 1C1',
     addressCountry: 'CA',
   },
-  areaServed: ['Brampton', 'Greater Toronto Area', 'Ontario'],
+  areaServed: ['Greater Toronto Area', 'Ontario', 'Brampton'],
   foundingDate: SITE.since.toString(),
   sameAs: [SITE.social.instagram, SITE.social.facebook],
   knowsAbout: [
@@ -127,12 +127,12 @@ function HeroSection() {
             className="max-w-4xl text-3xl font-bold leading-[1.04] text-white sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Brampton Construction Company
+            GTA Construction Company
           </h1>
 
           <p className="mt-6 max-w-[21rem] text-base leading-relaxed text-white/78 sm:max-w-2xl md:text-xl">
             Commercial build-outs, restaurant renovations, custom homes,
-            kitchens, and bathrooms across Brampton, the GTA, and Ontario.
+            kitchens, and bathrooms across the GTA and Ontario.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

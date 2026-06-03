@@ -5,13 +5,13 @@ import TextReveal from '@/components/animations/TextReveal';
 import { BRAND_LOGOS, SITE, SERVICES } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Commercial Construction Contractor in Brampton & GTA',
+  title: 'Commercial Construction Contractor in the GTA',
   description:
-    'Commercial construction contractor in Brampton and the GTA for restaurant build-outs, retail renovations, office renovations, institutional projects, bank interiors, and franchise spaces.',
+    'Commercial construction contractor in the GTA and Ontario for restaurant build-outs, retail renovations, office renovations, institutional projects, bank interiors, and franchise spaces.',
   openGraph: {
-    title: `Commercial Construction Contractor in Brampton & GTA | ${SITE.name}`,
+    title: `Commercial Construction Contractor in the GTA | ${SITE.name}`,
     description:
-      'Restaurant build-outs, retail renovations, office renovations, bank interiors, and institutional construction across Brampton and the GTA.',
+      'Restaurant build-outs, retail renovations, office renovations, bank interiors, and institutional construction across the GTA and Ontario.',
     images: [{ url: '/images/projects/mehfil-etobicoke-1.jpg', width: 1200, height: 630 }],
   },
 };
@@ -33,7 +33,7 @@ function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight max-w-3xl"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          <TextReveal text="Commercial Construction in Brampton & GTA" />
+          <TextReveal text="Commercial Construction in the GTA" />
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
@@ -215,7 +215,7 @@ function CtaSection() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Need a Commercial Construction Contractor in Brampton or the GTA?
+            Need a Commercial Construction Contractor in the GTA?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>

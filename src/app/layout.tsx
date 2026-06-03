@@ -6,16 +6,16 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Deeroi Constructions | Construction Company in Brampton, Ontario',
+    default: 'Deeroi Constructions | Construction Company in the GTA, Ontario',
     template: '%s | Deeroi Constructions',
   },
   description:
-    'Deeroi Constructions is a Brampton construction company serving the GTA and Ontario with commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom homes.',
+    'Deeroi Constructions is a GTA construction company serving Ontario with commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom homes.',
   metadataBase: new URL('https://www.deeroiconstructions.com'),
   openGraph: {
-    title: 'Deeroi Constructions | Brampton Construction Company',
+    title: 'Deeroi Constructions | GTA Construction Company',
     description:
-      'Commercial and residential construction across Brampton, the GTA, and Ontario.',
+      'Commercial and residential construction across the GTA and Ontario.',
     url: 'https://www.deeroiconstructions.com',
     siteName: 'Deeroi Constructions',
     type: 'website',

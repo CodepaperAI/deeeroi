@@ -6,11 +6,11 @@ import TextReveal from '@/components/animations/TextReveal';
 import QuoteForm from './QuoteForm';
 
 export const metadata: Metadata = {
-  title: 'Construction Quote in Brampton',
+  title: 'Construction Quote in the GTA',
   description:
-    'Request a construction quote from Deeroi Constructions in Brampton for commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom home projects.',
+    'Request a construction quote from Deeroi Constructions for commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom home projects across the GTA and Ontario.',
   openGraph: {
-    title: 'Construction Quote in Brampton | Deeroi Constructions',
+    title: 'Construction Quote in the GTA | Deeroi Constructions',
     description:
       'Tell us about your commercial or residential construction project and get clear next steps from Deeroi Constructions.',
   },

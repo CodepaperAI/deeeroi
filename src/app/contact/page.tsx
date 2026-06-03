@@ -7,13 +7,13 @@ import { SITE } from '@/lib/constants';
 import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Brampton Construction Company',
+  title: 'Contact GTA Construction Company',
   description:
-    'Contact Deeroi Constructions in Brampton for commercial construction, restaurant build-outs, residential renovations, kitchen renovations, bathroom renovations, and custom home projects.',
+    'Contact Deeroi Constructions for GTA commercial construction, restaurant build-outs, residential renovations, kitchen renovations, bathroom renovations, and custom home projects.',
   openGraph: {
-    title: 'Contact Brampton Construction Company | Deeroi Constructions',
+    title: 'Contact GTA Construction Company | Deeroi Constructions',
     description:
-      'Reach out to discuss your next commercial or residential construction project in Brampton, the GTA, or Ontario.',
+      'Reach out to discuss your next commercial or residential construction project in the GTA or Ontario.',
   },
 };
 
@@ -73,7 +73,7 @@ export default function ContactPage() {
           <ScrollReveal delay={0.3}>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
               Let&apos;s discuss your next construction or renovation project in
-              Brampton, the GTA, or Ontario.
+              the GTA or Ontario.
             </p>
           </ScrollReveal>
         </div>

@@ -5,13 +5,13 @@ import TextReveal from '@/components/animations/TextReveal';
 import { SITE } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Renovation Contractor in Brampton & GTA',
+  title: 'Renovation Contractor in the GTA',
   description:
-    'Renovation contractor in Brampton and the GTA for commercial renovations, restaurant renovations, office renovations, kitchen renovations, bathroom renovations, and basement finishing.',
+    'Renovation contractor in the GTA and Ontario for commercial renovations, restaurant renovations, office renovations, kitchen renovations, bathroom renovations, and basement finishing.',
   openGraph: {
-    title: `Renovation Contractor in Brampton & GTA | ${SITE.name}`,
+    title: `Renovation Contractor in the GTA | ${SITE.name}`,
     description:
-      'Commercial renovations, restaurant renovations, kitchen renovations, bathroom renovations, and basement finishing in Brampton and the GTA.',
+      'Commercial renovations, restaurant renovations, kitchen renovations, bathroom renovations, and basement finishing across the GTA and Ontario.',
     images: [{ url: '/images/projects/mehfil-brampton-2.jpg', width: 1200, height: 630 }],
   },
 };
@@ -33,7 +33,7 @@ function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight max-w-3xl"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          <TextReveal text="Renovation Contractor in Brampton & GTA" />
+          <TextReveal text="Renovation Contractor in the GTA" />
         </h1>
         <ScrollReveal delay={0.3} className="max-w-xl mt-6">
           <p className="text-lg md:text-xl text-white/70 leading-relaxed">
@@ -86,7 +86,7 @@ function CommercialRenovations() {
               className="text-3xl md:text-4xl font-bold leading-tight mb-6"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Commercial Renovations in Brampton & the GTA
+              Commercial Renovations in the GTA
             </h2>
             <p className="text-muted leading-relaxed text-lg mb-8">
               Whether you&apos;re planning an office renovation, restaurant
@@ -147,7 +147,7 @@ function ResidentialRenovations() {
               className="text-3xl md:text-4xl font-bold leading-tight mb-6"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Residential Renovations in Brampton & the GTA
+              Residential Renovations in the GTA
             </h2>
             <p className="text-muted leading-relaxed text-lg mb-8">
               Your home should reflect how you live today. From kitchen

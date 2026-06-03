@@ -7,7 +7,7 @@ import { PORTFOLIO_PROJECTS } from '@/lib/constants';
 import PortfolioGrid from './PortfolioGrid';
 
 export const metadata: Metadata = {
-  title: 'Construction Portfolio in Brampton & Ontario',
+  title: 'Construction Portfolio in the GTA & Ontario',
   description:
     'Browse Deeroi Constructions portfolio photos from commercial restaurant build-outs, retail renovations, institutional work, banks, kitchens, bathrooms, and residential upgrades across Ontario.',
   openGraph: {
