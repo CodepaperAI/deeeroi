@@ -88,10 +88,10 @@ const HERO_PHOTOS = [
   },
   {
     src: '/images/projects/barzilla-2.jpg',
-    alt: 'Backlit onyx feature wall and polished marble bar at Barzilla',
+    alt: 'Illuminated onyx back bar and marble bar counter at Barzilla',
     label: 'Barzilla',
-    eyebrow: 'Lounge Finish Work',
-    objectPosition: 'center 50%',
+    eyebrow: 'Bar Build-Out',
+    objectPosition: 'center 60%',
   },
   {
     src: '/images/projects/meridian-bank-port-elgin-1.jpg',
