@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Residential Construction Contractor in the GTA',
   description:
     'Residential construction contractor in the GTA and Ontario for custom homes, basement finishing, garden suites, kitchen renovations, bathroom renovations, and home upgrades.',
+  alternates: {
+    canonical: '/residential',
+  },
   openGraph: {
     title: `Residential Construction Contractor in the GTA | ${SITE.name}`,
     description:

@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Renovation Contractor in the GTA',
   description:
     'Renovation contractor in the GTA and Ontario for commercial renovations, restaurant renovations, office renovations, kitchen renovations, bathroom renovations, and basement finishing.',
+  alternates: {
+    canonical: '/renovations',
+  },
   openGraph: {
     title: `Renovation Contractor in the GTA | ${SITE.name}`,
     description:

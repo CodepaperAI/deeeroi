@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Commercial Construction Contractor in the GTA',
   description:
     'Commercial construction contractor in the GTA and Ontario for restaurant build-outs, retail renovations, office renovations, institutional projects, bank interiors, and franchise spaces.',
+  alternates: {
+    canonical: '/commercial',
+  },
   openGraph: {
     title: `Commercial Construction Contractor in the GTA | ${SITE.name}`,
     description:

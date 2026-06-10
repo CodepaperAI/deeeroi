@@ -10,10 +10,21 @@ export const metadata: Metadata = {
   title: 'Contact GTA Construction Company',
   description:
     'Contact Deeroi Constructions for GTA commercial construction, restaurant build-outs, residential renovations, kitchen renovations, bathroom renovations, and custom home projects.',
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: 'Contact GTA Construction Company | Deeroi Constructions',
     description:
       'Reach out to discuss your next commercial or residential construction project in the GTA or Ontario.',
+    images: [
+      {
+        url: '/images/projects/meridian-bank-port-elgin-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Completed commercial renovation by Deeroi Constructions',
+      },
+    ],
   },
 };
 

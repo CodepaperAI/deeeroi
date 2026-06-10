@@ -9,10 +9,21 @@ export const metadata: Metadata = {
   title: 'Construction Quote in the GTA',
   description:
     'Request a construction quote from Deeroi Constructions for commercial construction, restaurant build-outs, residential renovations, kitchens, bathrooms, and custom home projects across the GTA and Ontario.',
+  alternates: {
+    canonical: '/quote',
+  },
   openGraph: {
     title: 'Construction Quote in the GTA | Deeroi Constructions',
     description:
       'Tell us about your commercial or residential construction project and get clear next steps from Deeroi Constructions.',
+    images: [
+      {
+        url: '/images/projects/bombay-club-oakville-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Premium bar build-out by Deeroi Constructions',
+      },
+    ],
   },
 };
 

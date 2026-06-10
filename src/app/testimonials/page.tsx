@@ -10,10 +10,21 @@ export const metadata: Metadata = {
   title: 'Construction Reviews',
   description:
     'Read project-owner feedback for Deeroi Constructions, a GTA construction company serving commercial and residential projects across the Greater Toronto Area.',
+  alternates: {
+    canonical: '/testimonials',
+  },
   openGraph: {
     title: 'Construction Reviews | Deeroi Constructions',
     description:
       'Feedback from commercial and residential project owners across the GTA and Ontario.',
+    images: [
+      {
+        url: '/images/projects/7-spice-brampton-1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Finished restaurant interior by Deeroi Constructions',
+      },
+    ],
   },
 };
 

@@ -8,6 +8,9 @@ import { SITE, PORTFOLIO_PROJECTS, PROJECTS_COMPLETED, YEARS_IN_BUSINESS } from 
 export const metadata = {
   title: 'About Our GTA Construction Company',
   description: `Learn about ${SITE.name}, a GTA construction company serving Ontario with commercial build-outs, restaurant renovations, residential construction, kitchens, and bathrooms since ${SITE.since}.`,
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: `About Our GTA Construction Company | ${SITE.name}`,
     description: `Learn about ${SITE.name}, a GTA construction company serving Ontario with commercial and residential construction since ${SITE.since}.`,

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Construction Portfolio in the GTA & Ontario',
   description:
     'Browse Deeroi Constructions portfolio photos from commercial restaurant build-outs, retail renovations, institutional work, banks, kitchens, bathrooms, and residential upgrades across Ontario.',
+  alternates: {
+    canonical: '/portfolio',
+  },
   openGraph: {
     title: 'Construction Portfolio | Deeroi Constructions',
     description:
