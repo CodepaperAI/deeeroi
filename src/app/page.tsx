@@ -73,11 +73,11 @@ const HERO_PHOTOS = [
     objectPosition: 'center 48%',
   },
   {
-    src: '/images/projects/mehfil-etobicoke-1.jpg',
-    alt: 'Finished restaurant bar build-out by Deeroi Constructions',
+    src: '/images/projects/mehfil-etobicoke-2.jpg',
+    alt: 'Finished marble bar with custom signage at Mehfil Etobicoke',
     label: 'Mehfil Etobicoke',
     eyebrow: 'Hospitality Interior',
-    objectPosition: 'center 58%',
+    objectPosition: 'center 50%',
   },
   {
     src: '/images/projects/bombay-club-oakville-1.jpg',
@@ -87,8 +87,8 @@ const HERO_PHOTOS = [
     objectPosition: 'center 52%',
   },
   {
-    src: '/images/projects/barzilla-3.jpg',
-    alt: 'Luxury bar shelving and illuminated counter work',
+    src: '/images/projects/barzilla-2.jpg',
+    alt: 'Backlit onyx feature wall and polished marble bar at Barzilla',
     label: 'Barzilla',
     eyebrow: 'Lounge Finish Work',
     objectPosition: 'center 50%',
@@ -101,11 +101,11 @@ const HERO_PHOTOS = [
     objectPosition: 'center 50%',
   },
   {
-    src: '/images/projects/18972-mississauga-rd-caledon-3.jpg',
-    alt: 'Completed residential exterior project by Deeroi Constructions',
+    src: '/images/projects/18972-mississauga-rd-caledon-1.jpg',
+    alt: 'Completed custom home exterior by Deeroi Constructions',
     label: 'Caledon Custom Residence',
     eyebrow: 'Residential Project',
-    objectPosition: 'center 46%',
+    objectPosition: 'center 42%',
   },
 ] as const;
 
@@ -417,11 +417,11 @@ function CtaSection() {
   return (
     <section className="relative overflow-hidden py-24 text-white md:py-32">
       <Image
-        src="/images/projects/18972-mississauga-rd-caledon-3.jpg"
-        alt="Residential project exterior completed by Deeroi Constructions"
+        src="/images/projects/18972-mississauga-rd-caledon-1.jpg"
+        alt="Completed custom home exterior by Deeroi Constructions"
         fill
         className="object-cover"
-        style={{ objectPosition: 'center 46%' }}
+        style={{ objectPosition: 'center 42%' }}
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-black/68" />

@@ -30,8 +30,8 @@ export default function PortfolioPage() {
     <>
       <section className="relative overflow-hidden bg-foreground pb-24 pt-40 text-white md:pb-32 md:pt-48">
         <Image
-          src="/images/projects/18972-mississauga-rd-caledon-3.jpg"
-          alt="Completed residential exterior by Deeroi Constructions"
+          src="/images/projects/18972-mississauga-rd-caledon-1.jpg"
+          alt="Completed custom home exterior by Deeroi Constructions"
           fill
           priority
           className="object-cover"

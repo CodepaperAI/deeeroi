@@ -89,3 +89,70 @@ h1, h2, h3, h4, h5, h6 {
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+
+.blog-content {
+  color: var(--foreground);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.blog-content > * + * {
+  margin-top: 1.35rem;
+}
+
+.blog-content h2,
+.blog-content h3 {
+  color: var(--foreground);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 2.4rem;
+}
+
+.blog-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.blog-content h3 {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.blog-content p,
+.blog-content li {
+  color: var(--muted);
+}
+
+.blog-content a {
+  color: var(--accent-hover);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.4rem;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--foreground);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  padding-left: 1.25rem;
+}
+
+.blog-content img {
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  width: 100%;
+}

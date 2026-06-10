@@ -4,7 +4,7 @@ export const SITE = {
   description:
     'Full-service construction and renovation company specializing in commercial and residential projects across Ontario, including restaurants, retail, institutions, banks, and homes.',
   url: 'https://www.deeroiconstructions.com',
-  email: 'deeroi.info@gmail.com',
+  email: 'info@deeroiconstructions.com',
   phone: '+1 (647) 824-0001',
   address: '16 Regan Road, Brampton, ON, L7A 1C1',
   owner: 'Deepanshu Oberoi',
@@ -21,6 +21,7 @@ export const NAV_ITEMS = [
   { label: 'Commercial', href: '/commercial' },
   { label: 'Residential', href: '/residential' },
   { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'Contact', href: '/contact' },
 ] as const;
@@ -68,7 +69,7 @@ export const SERVICES = {
       title: 'Custom Home Construction',
       description:
         'Ground-up and major exterior work with premium residential detailing from first impression to final walkthrough.',
-      image: '/images/projects/18972-mississauga-rd-caledon-3.jpg',
+      image: '/images/projects/18972-mississauga-rd-caledon-1.jpg',
     },
     {
       title: 'Home Renovations',
@@ -298,11 +299,10 @@ export const PORTFOLIO_PROJECTS = [
     location: 'Caledon, ON',
     description:
       'A residential project with strong exterior presence, driveway approach, landscape context, and a premium estate-style finish.',
-    image: '/images/projects/18972-mississauga-rd-caledon-3.jpg',
+    image: '/images/projects/18972-mississauga-rd-caledon-1.jpg',
     images: [
       '/images/projects/18972-mississauga-rd-caledon-1.jpg',
       '/images/projects/18972-mississauga-rd-caledon-2.jpg',
-      '/images/projects/18972-mississauga-rd-caledon-3.jpg',
     ],
     highlights: ['Exterior presentation', 'Estate-style frontage', 'Residential finish coordination'],
   },

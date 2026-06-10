@@ -55,8 +55,8 @@ export default function ContactForm() {
           Message Sent!
         </h4>
         <p className="text-muted max-w-sm">
-          Thank you for reaching out. We&apos;ll get back to you within 24
-          hours.
+          Thank you for reaching out. We&apos;ll review your message and follow
+          up with the next steps.
         </p>
         <button
           onClick={() => setStatus('idle')}

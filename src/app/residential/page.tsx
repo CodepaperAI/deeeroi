@@ -12,7 +12,7 @@ export const metadata = {
     title: `Residential Construction Contractor in the GTA | ${SITE.name}`,
     description:
       'Custom homes, basement finishing, garden suites, kitchen renovations, and bathroom renovations across the GTA and Ontario.',
-    images: [{ url: '/images/projects/18972-mississauga-rd-caledon-3.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/images/projects/18972-mississauga-rd-caledon-1.jpg', width: 1200, height: 630 }],
   },
 };
 
