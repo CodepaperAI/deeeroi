@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import { PORTFOLIO_PROJECTS } from '@/lib/constants';
+import { PORTFOLIO_PROJECTS, PROJECTS_COMPLETED } from '@/lib/constants';
 import PortfolioGrid from './PortfolioGrid';
 
 export const metadata: Metadata = {
@@ -51,14 +51,14 @@ export default function PortfolioPage() {
             Construction Project Portfolio
           </h1>
           <p className="mt-6 max-w-[20rem] text-base leading-relaxed text-white/78 sm:max-w-2xl md:text-xl">
-            A stronger portfolio built from completed spaces, including
-            restaurants, banks, retail spaces, institutional projects, kitchens,
-            bathrooms, and residential upgrades.
+            Selected case studies from {PROJECTS_COMPLETED}+ completed projects
+            across the GTA and Ontario — restaurants, banks, retail and
+            institutional spaces, custom homes, kitchens, and bathrooms.
           </p>
 
           <div className="mt-10 grid max-w-3xl grid-cols-3 gap-px overflow-hidden rounded-lg border border-white/16 bg-white/12 backdrop-blur-md">
             {[
-              { value: PORTFOLIO_PROJECTS.length, label: 'Projects' },
+              { value: `${PROJECTS_COMPLETED}+`, label: 'Completed' },
               { value: commercialCount, label: 'Commercial' },
               { value: residentialCount, label: 'Homes' },
             ].map((item) => (

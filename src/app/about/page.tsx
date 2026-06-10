@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import TextReveal from '@/components/animations/TextReveal';
 import CountUp from '@/components/animations/CountUp';
-import { SITE, PORTFOLIO_PROJECTS } from '@/lib/constants';
+import { SITE, PORTFOLIO_PROJECTS, PROJECTS_COMPLETED, YEARS_IN_BUSINESS } from '@/lib/constants';
 
 export const metadata = {
   title: 'About Our GTA Construction Company',
@@ -194,8 +194,8 @@ function StatsSection() {
   ).length;
 
   const stats = [
-    { end: 8, suffix: '+', label: 'Years in Business' },
-    { end: PORTFOLIO_PROJECTS.length, suffix: '', label: 'Portfolio Projects' },
+    { end: YEARS_IN_BUSINESS, suffix: '+', label: 'Years in Business' },
+    { end: PROJECTS_COMPLETED, suffix: '+', label: 'Projects Completed' },
     { end: commercialProjects, suffix: '', label: 'Commercial Case Studies' },
     { end: residentialProjects, suffix: '', label: 'Residential Case Studies' },
   ];

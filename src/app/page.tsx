@@ -5,12 +5,14 @@ import { ArrowUpRight, CheckCircle2, ChevronDown, Phone } from 'lucide-react';
 import HeroPhotoCarousel from '@/components/animations/HeroPhotoCarousel';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import CountUp from '@/components/animations/CountUp';
-import { SITE, SERVICES, PORTFOLIO_PROJECTS, BRAND_LOGOS } from '@/lib/constants';
-
-const photoCount = PORTFOLIO_PROJECTS.reduce(
-  (total, project) => total + project.images.length,
-  0,
-);
+import {
+  SITE,
+  SERVICES,
+  PORTFOLIO_PROJECTS,
+  BRAND_LOGOS,
+  PROJECTS_COMPLETED,
+  YEARS_IN_BUSINESS,
+} from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Construction Company in the GTA and Ontario',
@@ -315,10 +317,10 @@ function ServicesSection() {
 
 function StatsSection() {
   const stats = [
-    { end: 8, suffix: '+', label: 'Years in business' },
+    { end: YEARS_IN_BUSINESS, suffix: '+', label: 'Years in business' },
+    { end: PROJECTS_COMPLETED, suffix: '+', label: 'Projects completed' },
     { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'commercial').length, suffix: '', label: 'Commercial case studies' },
     { end: PORTFOLIO_PROJECTS.filter((project) => project.type === 'residential').length, suffix: '', label: 'Residential case studies' },
-    { end: photoCount, suffix: '', label: 'Portfolio photos' },
   ];
 
   return (

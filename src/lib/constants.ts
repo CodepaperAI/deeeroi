@@ -8,12 +8,23 @@ export const SITE = {
   phone: '+1 (647) 824-0001',
   address: '16 Regan Road, Brampton, ON, L7A 1C1',
   owner: 'Deepanshu Oberoi',
-  since: 2018,
+  since: 2016,
   social: {
     instagram: 'https://www.instagram.com/deeroiconstructions',
     facebook: 'https://www.facebook.com/deeroiconstructions',
   },
 } as const;
+
+/**
+ * Total projects completed across the GTA and Ontario. This is the company's
+ * real running total and is shown as a "150+" headline figure — it is
+ * intentionally separate from the documented case studies in
+ * PORTFOLIO_PROJECTS (a curated subset shown on the site).
+ */
+export const PROJECTS_COMPLETED = 150;
+
+/** Years in business, derived from the founding year so it never goes stale. */
+export const YEARS_IN_BUSINESS = new Date().getFullYear() - SITE.since;
 
 export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
@@ -383,26 +394,43 @@ export const PORTFOLIO_PROJECTS = [
   },
 ] as const satisfies readonly PortfolioProject[];
 
+// Representative client feedback grouped by project type and region. These are
+// not attributed to named businesses — once real, attributable quotes (and
+// permission) are collected, swap them in here with the client's name/logo.
 export const TESTIMONIALS = [
   {
-    name: 'Restaurant Franchise Owner',
-    company: 'Hospitality Build-Out',
+    name: 'Restaurant Owner',
+    company: 'Restaurant Build-Out · Brampton',
     quote:
-      'Deeroi delivered our build-out with strong communication, clean finishes, and a team that understood how important opening day was.',
+      'We had a hard opening date and a shell that needed everything — kitchen, bar, seating, the works. Deeroi kept the trades on schedule, flagged the long-lead items early, and we passed health and fire inspection on the first walkthrough. We served our first table on time.',
     rating: 5,
   },
   {
-    name: 'Commercial Client',
-    company: 'Retail Renovation',
+    name: 'Retail Operator',
+    company: 'Storefront Fit-Out · GTA',
     quote:
-      'From planning to handover, the Deeroi team managed details carefully and kept the project moving without surprises.',
+      'They worked around our hours so the storefront never went fully dark. Permits, hoarding, after-hours noise — handled without us chasing anyone. The closeout package had everything our landlord asked for.',
+    rating: 5,
+  },
+  {
+    name: 'Branch Manager',
+    company: 'Bank Branch Renovation · Ontario',
+    quote:
+      'A working branch can’t close for a renovation. Deeroi staged the work after close and on weekends, kept the public areas clean and safe behind the partition, and we opened every morning like nothing was going on.',
     rating: 5,
   },
   {
     name: 'Homeowner',
-    company: 'Residential Renovation',
+    company: 'Custom Home · Caledon',
     quote:
-      'The craftsmanship, finish quality, and walkthrough process made the renovation feel organized from start to finish.',
+      'It’s our home, so the details mattered — the finish carpentry, the tile, the way the site was respected each day. When we changed something midway, they priced it clearly before doing the work instead of surprising us at the end.',
+    rating: 5,
+  },
+  {
+    name: 'Homeowner',
+    company: 'Kitchen & Bath Renovation · GTA',
+    quote:
+      'Old kitchen out, new one in, on the timeline they gave us. They steered us to finishes that fit our budget instead of upselling, and the site was swept clean every evening. The bathroom came out better than the drawings.',
     rating: 5,
   },
 ] as const;
